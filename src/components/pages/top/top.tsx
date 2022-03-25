@@ -51,7 +51,7 @@ export const Top = () => {
       </div>
       <div>
         <button onClick={() => {
-          dispatch(history('/test'))
+          history('/test')
         }}>
           遷移テスト
         </button>

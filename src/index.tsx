@@ -10,9 +10,9 @@ import {ConnectedRouter} from 'connected-react-router';
 
 ReactDOM.render(
   <Provider store={Store}>
-    <ConnectedRouter history={history}>
+    {/* <ConnectedRouter history={history}> */}
       <App />
-    </ConnectedRouter>
+    {/* </ConnectedRouter> */}
   </Provider>,
   document.getElementById("root")
 );

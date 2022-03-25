@@ -1,11 +1,14 @@
+import { push } from "connected-react-router";
 import React, { useCallback, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { State } from "../../../redux/root.reducer";
 import { SampleActions } from "../../../redux/sample/sample.action";
 
 export const Top = () => {
   // アクション発行できるようになる
   const dispatch = useDispatch();
+  const history = useNavigate();
   const [state, setState] = useState("");
   const [result, setResult] = useState("");
 
@@ -37,7 +40,7 @@ export const Top = () => {
         {/*  */}
         {/*  */}
         <input
-          type="text"
+          // type="text"
           value={state}
           onChange={(e) => setState(e.target.value)}
         />
@@ -45,6 +48,13 @@ export const Top = () => {
       <div>
         {/*  */}
         <button onClick={handleClickTest}> Redux Test </button>
+      </div>
+      <div>
+        <button onClick={() => {
+          dispatch(history('/test'))
+        }}>
+          遷移テスト
+        </button>
       </div>
     </div>
   );
